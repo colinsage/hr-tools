@@ -1,0 +1,32 @@
+{
+  "name": "hr_tools",
+  "version": "0.1.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager ./ hr_tools --win --arch=x64 --version 1.6.2 --overwrite --prune"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.6.2"
+  },
+  "dependencies": {
+    "request" :"^2.81.0",
+    "ejs": "~2.3.1",
+    "ejs-mate": "^2.3.0",
+    "cheerio": "^0.19.0",
+    "nodemailer": "^4.0.1",
+    "node-xlsx": "^0.7.4",
+    "htmlencode" :"^0.0.4"
+  }
+}

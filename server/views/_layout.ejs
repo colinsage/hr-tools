@@ -1,0 +1,80 @@
+<!--  layout of the application-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="//static.bolezhai.com/public/favicon.ico">
+
+    <title>HR 百宝箱</title>
+
+      <!-- Insert this line above script imports  -->
+      <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <!-- Bootstrap core CSS
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    -->
+
+    <!-- Custom styles for this template
+    <link href="/css/style.css" rel="stylesheet">
+    -->
+    <%- include _control/header.ejs %>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%- include _control/header-nav.ejs %>
+    <%- include _control/sidebar.ejs %>
+     <div class="content-wrapper">
+         <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+             <%- body -%>
+         </div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 2.3.3
+        </div>
+        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+        reserved.
+      </footer>
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+          <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+          <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+      </aside>
+       <div class="control-sidebar-bg"></div>
+
+  </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//static.bolezhai.com/public/js/app.min.js"></script>
+  </body>
+</html>

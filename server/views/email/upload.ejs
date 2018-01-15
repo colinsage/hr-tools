@@ -1,0 +1,53 @@
+<!--  layout of the application-->
+<% layout('_layout') -%>
+
+<script type="text/javascript" src="//cdn.bootcss.com/tinymce/4.6.1/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+    selector: "#email-body",
+    plugins: [
+        "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+        "table contextmenu directionality emoticons template textcolor paste fullpage textcolor"
+    ],
+
+    toolbar1: "code| undo redo | cut copy paste | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+    toolbar2: " searchreplace | bullist numlist | outdent indent blockquote | link unlink anchor image media | inserttime preview | forecolor backcolor",
+    toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft",
+
+    menubar: false,
+    toolbar_items_size: 'small',
+    wordcount_countregex: /(\w|[\u4E00-\u9FA5]|[0-9])/g ,
+    language_url: '//static.bolezhai.com/public/tinymce/js/tinymce/langs/zh_CN.js'
+});
+
+</script>
+<div>
+    <form method="POST" enctype="multipart/form-data" action="../email/upload.do">
+        <div class="form-group">
+            <label for="email-subject">邮件标题:</label>
+            <input type="input" name="subject" class="form-control" id="email-subject" placeholder="邮件标题" value="工资条">
+        </div>
+        <div class="form-group">
+            <label for="email-body">邮件正文:</label>
+            <textarea class="form-control" id="email-body" name="body"  placeholder="邮件正文, 换行请输入</br>; 段落请用<p>...</p>" value="邮件内容如下:" rows="3">
+                <p>
+                    <span style="font-size: 10pt;">
+                        以下是你本月工资明细。如有异议请在3日内联系我，否则视为无异议。
+                    </span>
+                </p>
+
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">选择文件:</label>
+            <input type="file" id="email-file" name="file">
+            <p class="help-block">
+                目前仅支持excel2007文件; <br/>
+                上传文件的第1列必须是电子邮箱;<br/>
+                上传文件的第1行必须是表头，会在每个邮件的表格中出现
+            </p>
+        </div>
+        <input   class="btn btn-primary"  type="submit" value="预览">
+    </form>
+</div>

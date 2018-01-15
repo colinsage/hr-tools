@@ -1,0 +1,83 @@
+<!--  layout of the application-->
+<% layout('_layout') -%>
+
+<style type="text/css">
+  table.gridtable {
+      font-family: verdana,arial,sans-serif;
+      font-size:11px;
+      color:#333333;
+      border-width: 1px;
+      border-color: #666666;
+      border-collapse: collapse;
+  }
+  table.gridtable th {
+      border-width: 1px;
+      padding: 8px;
+      border-style: solid;
+      border-color: #666666;
+      background-color: #dedede;
+      white-space:nowrap;
+  }
+  table.gridtable td {
+      border-width: 1px;
+      padding: 8px;
+      border-style: solid;
+      border-color: #666666;
+      background-color: #ffffff;
+      white-space:nowrap;
+  }
+  .blz-bd {
+      margin-top: 20px;
+      font-family: Verdana,Arial,Helvetica,sans-serif;
+      font-size: 10px;
+      border-color: rgb(230, 235, 224);
+      border-style: dashed;
+      border-width: 1px;
+  }
+  /*
+  .blz-bd p {
+  text-indent: 2em;
+  }
+  */
+  </style>
+
+<form method="POST" action="../email/send.do" >
+    <input type="input" name="filePath" hidden="true" value="<%= filePath %>">
+    <input type="input" name="subject" hidden="true" value="<%= subject %>">
+    <input type="input" name="body" hidden="true" value="<%= content %>">
+    <input  class="btn btn-primary"  type="submit" value="发送邮件">
+</form>
+<hr/>
+<h3> <%= subject %></h3>
+<div class="blz-bd">
+    <%- content %>
+</div>
+
+<% if(data) { %>
+    <table class="gridtable">
+        <tr>
+            <% for(var i=0; i<data[0].length; i++) {%>
+                <th><%= data[0][i] %></th>
+                <% } %>
+        </tr>
+        <% for (var i=1; i<data.length; i++) { %>
+            <tr>
+                <% for(var j=0; j< data[0].length; j++) {
+                    if(j<data[i].length){
+                        if(data[i][j] ==null){%>
+                            <td><%= '' %></td>
+                        <% } else if(Object.prototype.toString.call(data[i][j]) === "[object String]"){
+                            %>
+                            <td><%= data[i][j] %></td>
+                        <% } else { %>
+                                <td><%= isNaN(data[i][j])?data[i][j]:new Number(data[i][j]).toFixed(2)%></td>
+                                <%
+                         }
+                        } else { %>
+                            <td><%= '' %></td>
+                            <%}
+                        } %>
+            </tr>
+        <% } %>
+        </table>
+  <% } %>

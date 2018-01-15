@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>首页</title>
+
+<%- include _control/header.ejs %>
+  <link href="//static.bolezhai.com/public/css/signin.css" rel="stylesheet">
+
+  </head>
+  <body>
+  <div class="container">
+  <%- body -%>
+   </div> <!-- /container -->
+
+<div style="margin-left: 45%;">
+  <a class="btn btn-lg btn-primary btn-shadow" href="http://static.bolezhai.com/hr_tools_client.zip" target="_blank" role="button" >客户端下载<span class="glyphicon glyphicon-download-alt"></span></a>
+</div>
+
+   <script src="//static.bolezhai.com/public/js/jQuery-2.2.0.min.js"></script>
+   <!-- Bootstrap 3.3.6 -->
+   <script src="//static.bolezhai.com/public/js/bootstrap.min.js"></script>
+   <!-- iCheck -->
+   <script src="//static.bolezhai.com/public/js/icheck.min.js"></script>
+   <script>
+     $(function () {
+       $('input').iCheck({
+         checkboxClass: 'icheckbox_square-blue',
+         radioClass: 'iradio_square-blue',
+         increaseArea: '20%' // optional
+       });
+     });
+   </script>
+  </body>
+</html>

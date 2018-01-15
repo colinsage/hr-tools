@@ -1,0 +1,66 @@
+<html>
+<head>
+    <META http-equiv=Content-Type content='text/html; charset=UTF-8'>
+    <style type="text/css">
+        table.gridtable {
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+            white-space:nowrap;
+        }
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+            white-space:nowrap;
+        }
+        .blz-bd {
+            font-family: Verdana,Arial,Helvetica,sans-serif;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="blz-bd">
+    <%- body %>
+</div>
+<div>
+    <table class="gridtable">
+        <tr>
+            <% for(var i=1; i< header.length; i++) {%>
+            <th><%= header[i] %></th>
+            <% } %>
+        </tr>
+        <% for(var i=0; i < records.length; i++) { %>
+        <tr>
+            <% for(var j=1; j< header.length; j++) {
+            if(j < records[i].length){
+            if(Object.prototype.toString.call(records[i][j]) === "[object String]"){
+            %>
+            <td><%= records[i][j] %></td>
+            <% } else { %>
+            <td><%= isNaN(records[i][j])?records[i][j]:new Number(records[i][j]).toFixed(2)%></td>
+            <%
+            }
+            } else { %>
+            <td><%= %></td>
+            <%}
+            } %>
+        </tr>
+        <% } %>
+    </table>
+</div>
+</body>
+</html>

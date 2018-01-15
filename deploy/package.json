@@ -1,0 +1,11 @@
+{
+  "name": "deploy",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "supervisor app"
+  },
+  "dependencies": {
+     "github-webhook-handler":"0.5.0"
+  }
+}

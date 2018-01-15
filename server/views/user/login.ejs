@@ -1,0 +1,43 @@
+<% layout('_login') -%>
+
+     <div class="login-box">
+       <div class="login-logo">
+          <b>欢迎使用HR百宝箱</b>
+       </div>
+       <!-- /.login-logo -->
+       <div class="login-box-body">
+
+         <form action="/outer/login.do" method="post">
+           <div class="form-group has-feedback">
+             <input id="inputEmail"  name="user" type="email" class="form-control" placeholder="Email">
+             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+           </div>
+           <div class="form-group has-feedback">
+             <input id="inputPassword" name="pass" type="password" class="form-control" placeholder="Password">
+             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+           </div>
+           <div class="row">
+             <div class="col-xs-8">
+               <div class="checkbox icheck">
+                 <label>
+                   <input type="checkbox">记住我
+                 </label>
+               </div>
+             </div>
+             <!-- /.col -->
+             <div class="col-xs-4">
+               <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+             </div>
+             <!-- /.col -->
+           </div>
+         </form>
+
+         <!-- /.social-auth-links -->
+
+            <a href="register.html" class="text-center"><span>注册</span></a>
+         <br/>
+            <a href="//note.bolezhai.com/blog/post/hr-tools/help" target="_blank">
+                <span>Help</span></a>
+       </div>
+       <!-- /.login-box-body -->
+     </div>

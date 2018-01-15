@@ -1,0 +1,18 @@
+<% layout('_layout') -%>
+<form action="/user/save.do" method="post">
+  <div class="form-group">
+    <label for="inputname">姓名</label>
+    <input input name="name" type="text" class="form-control" id="inputname" vaule="<%= user.name %>" placeholder="<%= user.name %>">
+  </div>
+  <div class="form-group">
+    <label for="email_password">邮箱密码</label>
+    <input name="email_pass" type="password" class="form-control" id="email_password" value="<%= user.email_pass %>">
+    </div>
+  <hr/>
+    <div class="form-group">
+      <label for="inputpassword">登录密码</label>
+      <input name="pass" type="password" class="form-control" id="inputpassword" value="<%= user.pass %>">
+  </div>
+
+  <button type="submit" class="btn btn-default">保存</button>
+</form>

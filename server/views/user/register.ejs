@@ -1,0 +1,51 @@
+<% layout('_login') -%>
+<div class="register-box">
+  <div class="register-logo">
+     <b>注册</b>
+  </div>
+<div class="register-box-body">
+
+
+    <p class="login-box-msg">
+     <% if (typeof(error) !="undefined" ){ %>
+         <font color="red"> <%= error %> </font>
+        <% } else { %>
+            新用户
+    <% } %>
+    </p>
+
+    <form action="/outer/register.do" method="post">
+      <div class="form-group has-feedback">
+        <input name="email" type="email" class="form-control" placeholder="Email邮箱">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input name="pass" type="password" class="form-control" placeholder="登录密码">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+
+      <div class="form-group has-feedback">
+              <input name="code" type="text" class="form-control" placeholder="邀请码">
+              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+      <div class="row">
+        <div class="col-xs-8">
+            <!--
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> <a href="#">terms</a>
+            </label>
+          </div>
+      -->
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">注册</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+
+    <a href="login.html" class="text-center">已有账号，直接登录</a>
+  </div>
+</div>
